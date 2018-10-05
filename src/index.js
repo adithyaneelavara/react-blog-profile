@@ -8,7 +8,7 @@ import Blog from './blog'
 var $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
-  
 
 
-ReactDOM.render(<Blog />, document.getElementById("index"));
+
+ReactDOM.render( < Blog / > , document.getElementById("index"));

@@ -9,6 +9,8 @@ class BlogPost extends React.Component{
 			id:this.props.id,
 			data:this.props.data,
 			title:this.props.data.title,
+			published:this.props.data.published,
+			tags:this.props.data.tags,
 			content:this.props.data.content
 		};
 		console.log(this.state	);
@@ -18,9 +20,12 @@ class BlogPost extends React.Component{
 		return (
 			<section className="resume-section p-3 p-lg-5 d-flex flex-column" id={this.state.id}>
 				<div className="my-auto">
-					<h2 className="mb-5">{this.state.title}</h2>
+					<h2 >{this.state.title}</h2>
+					<div className="mb-5">
+						<div>{this.state.tags}</div><div className="text-right"> {this.state.published}</div>
+					</div>
 					<div className="resume-content mr-auto">
-						 <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.state.content)}}></div>
+						 <div className="resume-content mr-auto" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.state.content)}}></div>
 					</div>
 				</div>	
 			</section>
