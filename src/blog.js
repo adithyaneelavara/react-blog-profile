@@ -21,18 +21,18 @@ class Blog extends React.Component{
 		this.state={
 		posts:[]
 	};
-
+  
 	};
 
 	  createTable() {
     	let bloglist=[];
     	for(var i=0;i<this.state.posts.length;i++){
     		bloglist.push(<div><BlogPost id={this.state.posts[i].id} data={this.state.posts[i]}/></div>)
-     	 }
+     	 }  
 	    return bloglist;
   };
     componentDidMount() {
-    axios.get(`https://api.adithyaneelavra.info/DEV/?postId=*`)
+    axios.get(`https://api.adithyaneelavra.info/v1/?postId=*`)
       .then(res => {
         const posts = res.data.map(obj => obj);
         this.setState({ posts });

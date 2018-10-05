@@ -10,7 +10,7 @@ class BlogPost extends React.Component{
 			title:this.props.data.title,
 			content:this.props.data.content
 		};
-		console.log(this.state);
+		console.log(this.state	);
 
 	}
 	render(){
