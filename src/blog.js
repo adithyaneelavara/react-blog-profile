@@ -32,7 +32,7 @@ class Blog extends React.Component{
 	    return bloglist;
   };
     componentDidMount() {
-    axios.get(`https://api.adithyaneelavra.info/v1/?postId=*`)
+    axios.get(`https://api.adithyaneelavara.info/v1/?postId=*`)
       .then(res => {
         const posts = res.data.map(obj => obj);
         this.setState({ posts });
