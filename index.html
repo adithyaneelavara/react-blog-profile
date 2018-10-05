@@ -40,30 +40,30 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="blog.html" target="_blank">Blog</a>
+            <a class="nav-link js-scroll-trigger" href="#" onclick="javascript:navigate(true);" >Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about" onclick="javascript:navigate(false);">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            <a class="nav-link js-scroll-trigger" href="#experience" onclick="javascript:navigate(false);">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+            <a class="nav-link js-scroll-trigger" href="#education" onclick="javascript:navigate(false);">Education</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            <a class="nav-link js-scroll-trigger" href="#skills" onclick="javascript:navigate(false);">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Certifications</a>
+            <a class="nav-link js-scroll-trigger" href="#awards" onclick="javascript:navigate(false);">Certifications</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0" id="about">
 
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" >
         <div class="my-auto">
           <h1 class="mb-0">Adithya
             <span class="text-primary">Neelavara</span>
@@ -84,18 +84,18 @@
       </section>
 
       <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+<div id="experience">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" >
         <div class="my-auto">
           <h2 class="mb-5">Experience</h2>
           <div>Coming Soon..</div>
 
 
       </section>
-
+</div>
       <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+<div id="education">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" >
         <div class="my-auto">
           <h2 class="mb-5">Education</h2>
 
@@ -113,10 +113,10 @@
 
         </div>
       </section>
-
+</div>
       <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+<div id="skills">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" >
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
 
@@ -183,11 +183,11 @@
 
       <hr class="m-0">
 
-     
-
+     </div>
+<div id="awards">
       <hr class="m-0">
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" >
         <div class="my-auto">
           <h2 class="mb-5">Awards &amp; Certifications</h2>
           <ul class="fa-ul mb-0">
@@ -204,13 +204,36 @@
           </ul>
         </div>
       </section>
-
+    </div>
     </div>
 
+  <div class="container-fluid p-0" id="index">
+
+    
+  </div>
 
     <!-- Custom scripts for this template -->
     <script src="dist/main.js"></script>
-
+<script type="text/javascript">
+  
+function navigate(isBlog) {
+  if(isBlog){
+    jQuery('#about').hide();
+    jQuery('#experience').hide();
+    jQuery('#education').hide();
+    jQuery('#skills').hide();
+    jQuery('#awards').hide();
+    jQuery('#index').show();
+  }else{
+    jQuery('#about').show();
+    jQuery('#experience').show();
+    jQuery('#education').show();
+    jQuery('#skills').show();
+    jQuery('#awards').show();
+    jQuery('#index').hide();
+  }
+}
+</script>
   </body>
 
 </html>
