@@ -35,6 +35,7 @@ class Blog extends React.Component{
     axios.get(`https://api.adithyaneelavara.info/v1/?postId=*`)
       .then(res => {
         const posts = res.data.map(obj => obj);
+        posts.sort((a,b) => (a.sortOrder < b.sortOrder) ? 1 : ((b.sortOrder < a.sortOrder) ? -1 : 0)); 
         this.setState({ posts });
       });
   };

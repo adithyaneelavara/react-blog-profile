@@ -10,7 +10,11 @@ def lambda_handler(event, context):
     table = dynamodb.Table(os.environ['DB_TABLE_NAME'])
     
     if postId=="*":
-        items = table.scan()
+        items = table.scan(
+            Limit=10,
+            Select='ALL_ATTRIBUTES'
+    )
+    
     else:
         items = table.query(
             KeyConditionExpression=Key('id').eq(postId)
