@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify'
 
 class BlogPost extends React.Component{
 	constructor(props){
@@ -19,7 +20,7 @@ class BlogPost extends React.Component{
 				<div className="my-auto">
 					<h2 className="mb-5">{this.state.title}</h2>
 					<div className="resume-content mr-auto">
-						 <div>{this.state.content}</div>
+						 <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(this.state.content)}}></div>
 					</div>
 				</div>	
 			</section>
