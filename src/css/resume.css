@@ -175,8 +175,11 @@ section.resume-section .resume-item .resume-date {
   }
 }
 
+.top-nav{
+  padding-top:3rem !important;
+}
 .bg-primary {
-  background-color: #BD5D38 !important;
+  background-color: #000000 !important;
 }
 
 .text-primary {
