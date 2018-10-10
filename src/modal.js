@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './login';
 const display ={
 	display:'block'
 };
@@ -26,28 +27,24 @@ class Modal extends React.Component{
 	render(){
 		var modal =[];
 		modal.push(
-				<div className="modal"  style={this.state.toggle ? display :hide}>
+				<div key="loginModal" className="modal"  style={this.state.toggle ? display :hide}>
 				  <div className="modal-dialog" >
 				    <div className="modal-content">
 				      <div className="modal-header">
-				        <h5 className="modal-title">Modal title</h5>
+				        <h5 className="modal-title">Login</h5>
 				        <button type="button" className="close" onClick={this.toggle} >
 				          <span >&times;</span>
 				        </button>
 				      </div>
 				      <div className="modal-body">
-				        <p>Modal body text goes here.</p>
-				      </div>
-				      <div className="modal-footer">
-				        <button type="button" className="btn btn-primary" onClick={this.toggle}>Save changes</button>
-				        <button type="button" className="btn btn-secondary" onClick={this.toggle} >Close</button>
+				       <Login />
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			);
 		return (
-				<div>
+				<div id="modal-sub">
 					<span className="btn btn-primary" onClick={this.toggle}>Login</span>
 					{modal}
 				</div>

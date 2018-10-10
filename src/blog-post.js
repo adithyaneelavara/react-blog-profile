@@ -18,7 +18,7 @@ class BlogPost extends React.Component{
 	}
 	render(){
 		return (
-			<section className="resume-section p-3 p-lg-5 d-flex flex-column" id={this.state.id}>
+			<section className="resume-section p-3 p-lg-5 d-flex flex-column" id={this.state.id} key={this.state.id}>
 				<div className="my-auto">
 					<h2 >{this.state.title}</h2>
 					<div className="mb-5">

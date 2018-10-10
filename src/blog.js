@@ -40,13 +40,8 @@ class Blog extends React.Component {
         createTable() {
             let bloglist = [];
             for (var i = 0; i < this.state.posts.length; i++) {
-                bloglist.push( < div > < BlogPost id = {
-                        this.state.posts[i].id
-                    }
-                    data = {
-                        this.state.posts[i]
-                    }
-                    /></div > )
+                bloglist.push( <div key={this.state.posts[i].id}>  <BlogPost key={this.state.posts[i].id} id = {this.state.posts[i].id}
+                    data = {this.state.posts[i]}/></div > )
             }
             return bloglist;
         };
@@ -62,17 +57,13 @@ class Blog extends React.Component {
         };
         render() {
 
-            return ( <
-                div > {
+            return ( <div  key="blog"> {
                     this.createTable().map(function(listValue) {
-                        return <div key = {
-                            listValue.id
-                        } > {
-                            listValue
-                        } < /div>;
+                        return <div key={listValue.key}>
+                         {listValue} 
+                         < /div>;
                     })
-                } <
-                /div>);
+                } </div>);
             }
 
         }
