@@ -3,16 +3,16 @@ import React from 'react'
 
 class AboutMe extends React.Component{
 
-	render(){
+  render(){
 
-		return (
+    return (
 
 
       <section className="resume-section p-3 p-lg-5 d-flex d-column" >
         <div className="my-auto">
-          <h1 className="mb-0">Adithya
+          <h2 className="mb-0">Adithya
             <span className="text-primary">Neelavara</span>
-          </h1>
+          </h2>
           <div className="subheading mb-5">Camberley, UK 
    
           </div>
@@ -25,11 +25,14 @@ class AboutMe extends React.Component{
             <a   href="https://github.com/adithyaneelavara">
               <i className="fab fa-github"></i>
             </a>
+            <a   href="AdithyaNeelavara-Resume.pdf" target="_blank">
+              <i className="far fa-file"></i>
+            </a>
           </div>
         </div>
       </section>
-			);
-	}
+      );
+  }
 }
 
 export default AboutMe;
