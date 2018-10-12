@@ -7,6 +7,7 @@ import BlogPost from './blog-post'
 import App from './App'
 import Modal from './modal'
 import css1 from './css/bootstrap.min.css'
+
 import css from './css/resume.css'	
 import Amplify from "aws-amplify";
 import BlogEditor from './blog-editor';
