@@ -19,7 +19,7 @@ const renderMergedProps = (component, ...rest) => {
 const PrivateRoute = ({ component, redirectTo, ...rest }) => {
   return (
     <Route {...rest} render={routeProps => {
-      return auth.loggedIn() ? (
+      return rest.childProps.isAuthenticated ? (
         renderMergedProps(component, routeProps, rest)
       ) : (
         <Redirect to={{
@@ -74,7 +74,7 @@ class App extends React.Component{
 	 				 <Route  props={childProps} path="/skills" component={Skills}/>	 				
 	 				 <Route  props={childProps} path="/certifications" component={Certifications}/>
 	 				 <Route  props={childProps} path="/blog" component={Blog}/>
-	 				 <Route  props={childProps} path="/blogeditor" component={BlogEditor}/>
+	 				 <PrivateRoute  childProps={childProps} path="/blogeditor"  redirectTo="/login" component={BlogEditor}/>
 	 				<PropsRoute  childProps={childProps} path="/login" component={Login}  />
 
 	 				</div>
