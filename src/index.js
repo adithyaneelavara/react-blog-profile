@@ -9,7 +9,7 @@ import Modal from './modal'
 import css1 from './css/bootstrap.min.css'
 import css from './css/resume.css'	
 import Amplify from "aws-amplify";
-
+import BlogEditor from './blog-editor';
 import regeneratorRuntime from "regenerator-runtime";
 
 import config from "./config";
@@ -17,7 +17,7 @@ import config from "./config";
 
 Amplify.configure({
   Auth: {
-    mandatorySignIn: true,
+    mandatorySignIn: true, 
     region: config.cognito.REGION,
     userPoolId: config.cognito.USER_POOL_ID,
     userPoolWebClientId: config.cognito.APP_CLIENT_ID,

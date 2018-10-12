@@ -32,7 +32,7 @@ export default class Login extends Component {
 
   try {
     await Auth.signIn(this.state.email, this.state.password);
-    alert("Logged in");
+    this.props.childProps.userHasAuthenticated(true);
   } catch (e) {
     alert(e.message);
   }		
@@ -40,7 +40,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="col-md-5 top-nav">
+      <h3>Login</h3>
+      <div className="Login resume-section ">
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
@@ -69,6 +71,7 @@ export default class Login extends Component {
             Login
           </Button>
         </form>
+      </div>
       </div>
     );
   }

@@ -7,14 +7,9 @@ class Navigation extends React.Component{
 
 constructor(props){
 	super(props);
+	console.log(props);
+}
 
-}
-navigate(){
-return ;
-};
-navigateFalse(){
-	return;
-}
 	render(){
 
 		return (
@@ -23,7 +18,7 @@ navigateFalse(){
 		      <a className="navbar-brand js-scroll-trigger" href="#page-top">
 		        <span className="d-block d-lg-none">Adithya Neelavara</span>
 		        <span className="d-none d-lg-block">
-		          <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/profile.png" alt="" />
+		          <img className="img-pr" src="images/profile.png" alt="" />
 		        </span>
 		      </a>
 		      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +44,14 @@ navigateFalse(){
 		          <li className="nav-item ">
 		             <Link className="nav-link" to="/blog">Blog</Link>
 		          </li>
-		         <li id="login111	topics" ><Modal /></li>
+		          <li id="login111	topics" >
+		         {this.props.props.isAuthenticated ? <Link className="nav-link" to="/blogeditor">Publish</Link>:<div></div>}
+		         </li>
+		         <li id="login111	topics" >
+		         {this.props.props.isAuthenticated ? <a className="nav-link" onClick={this.props.props.handleLogout}>Logout</a> : <Link className="nav-link" to="/login">Login</Link>}
+		         </li>
+
+		        
 		        </ul>
 		      </div>
     		</nav>
