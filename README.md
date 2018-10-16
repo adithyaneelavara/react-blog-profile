@@ -18,5 +18,4 @@
 
 # Architecture of the Application
 
-
-....In Progress
+![](Architecture.png)
