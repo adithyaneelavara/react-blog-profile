@@ -182,7 +182,7 @@ section.resume-section .resume-item .resume-date {
   padding-top:10rem !important;
 }
 .bg-primary {
-  background-color: #000000 !important;
+  background-color: #c2c2c2 !important;
 }
 
 .text-primary {
@@ -190,7 +190,7 @@ section.resume-section .resume-item .resume-date {
 }
 
 a {
-  color: #BD5D38;
+  color: #BD5D38 !important;
 }
 
 a:hover, a:focus, a:active {

@@ -18,7 +18,7 @@ constructor(props){
 		      <a className="navbar-brand js-scroll-trigger" href="#page-top">
 		        <span className="d-block d-lg-none">Adithya Neelavara</span>
 		        <span className="d-none d-lg-block">
-		          <img className="img-pr" src="images/profile.png" alt="" />
+		          <img className="img-pr" src="images/logo.png" alt="" />
 		        </span>
 		      </a>
 		      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
