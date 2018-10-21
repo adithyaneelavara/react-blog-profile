@@ -197,5 +197,12 @@ a:hover, a:focus, a:active {
   color: #824027;
 }
 
+.DraftEditor-editorContainer{
+height: 250px;
+border: 1px solid #e9e9e9;
+}
+
+
+
 
 
