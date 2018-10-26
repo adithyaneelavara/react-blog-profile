@@ -16,6 +16,7 @@ export default class BlogEditor extends Component{
   		};
   		this.onEditorStateChange =this.onEditorStateChange.bind(this);
   		this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
 	}
   
 onEditorStateChange(editorState){
@@ -24,6 +25,11 @@ onEditorStateChange(editorState){
     });
 
 }
+ handleChange(event) {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
 
     handleSubmit(){
     	return '';
@@ -39,6 +45,7 @@ onEditorStateChange(editorState){
               autoFocus
               type="text"
               value={this.state.title}
+               onChange={this.handleChange}
             />
              <ControlLabel>Post</ControlLabel>
         <Editor

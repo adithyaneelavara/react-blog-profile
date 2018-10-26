@@ -1,14 +1,16 @@
 import React from 'react';
-import Blog from './blog';
-import About from './about';
-import Certifications from './certifications';
-import Education from './education';
-import Skills from './skills';
+import { Auth } from "aws-amplify";
 import { Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import Navigation from './navigation';
-import Login from './login';
-import BlogEditor from './blog-editor';
+import regeneratorRuntime from "regenerator-runtime";
+import Blog from './components/blog';
+import About from './components/about';
+import Certifications from './components/certifications';
+import Education from './components/education';
+import Skills from './components/skills';
+import Navigation from './components/navigation';
+import Login from './components/login';
+import BlogEditor from './components/blog-editor';
 
 const renderMergedProps = (component, ...rest) => {
   const finalProps = Object.assign({}, ...rest);
@@ -45,13 +47,27 @@ class App extends React.Component{
 
 		super(props);
 		this.state={
-			isAuthenticated:false
+			isAuthenticated:false,
+			isAuthenticating: true
 		};
 		this.userHasAuthenticated =this.userHasAuthenticated.bind(this);
 		this.handleLogout =this.handleLogout.bind(this);
 	};
+	async componentDidMount() {
+	  try {
+	    await Auth.currentSession();
+	    this.userHasAuthenticated(true);
+	  }
+	  catch(e) {
+	    if (e !== 'No current user') {
+	      alert(e);
+	    }
+	  }
 
-	handleLogout(){
+	  this.setState({ isAuthenticating: false });
+	}
+	async handleLogout(){
+		await Auth.signOut();
 		this.setState({isAuthenticated:false});
 	}
 	userHasAuthenticated(authenticated){

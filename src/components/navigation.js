@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from './modal';
 
 import { Link } from "react-router-dom";
 
@@ -48,7 +47,7 @@ constructor(props){
 		         {this.props.props.isAuthenticated ? <Link className="nav-link" to="/blogeditor">Publish</Link>:<div></div>}
 		         </li>
 		         <li id="login111	topics" >
-		         {this.props.props.isAuthenticated ? <a className="nav-link" onClick={this.props.props.handleLogout}>Logout</a> : <Link className="nav-link" to="/login">Login</Link>}
+		         {this.props.props.isAuthenticated ? <a className="nav-link" to="logout" onClick={this.props.props.handleLogout}>Logout</a> : <Link className="nav-link" to="/login">Login</Link>}
 		         </li>
 
 		        

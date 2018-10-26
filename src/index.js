@@ -1,19 +1,17 @@
 import React from "react";
+import regeneratorRuntime from "regenerator-runtime";
 import { HashRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom";
 import 'jquery'
 import 'bootstrap'
-import BlogPost from './blog-post'
-import App from './App'
-import Modal from './modal'
-import css1 from './css/bootstrap.min.css'
-
-import css from './css/resume.css'	
 import Amplify from "aws-amplify";
-import BlogEditor from './blog-editor';
-import regeneratorRuntime from "regenerator-runtime";
+import config from "./config/config";
+import BlogPost from './components/blog-post'
+import BlogEditor from './components/blog-editor';
+import App from './App'
+import bootstrapcss from './css/bootstrap.min.css'
+import css from './css/resume.css'	
 
-import config from "./config";
 
 
 Amplify.configure({
@@ -37,9 +35,6 @@ Amplify.configure({
 var $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
-
-
-jQuery('#index').hide();
 
 ReactDOM.render( <Router>
    < App / >
