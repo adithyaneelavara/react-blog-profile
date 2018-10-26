@@ -18,6 +18,7 @@ class Blog extends React.Component {
             }
             return bloglist;
         };
+
         componentDidMount() {
             axios.get(`https://api.adithyaneelavara.info/v1/getPosts?postId=*`)
                 .then(res => {
@@ -28,6 +29,7 @@ class Blog extends React.Component {
                     });
                 });
         };
+        
         render() {
 
             return ( <div  key="blog"> {

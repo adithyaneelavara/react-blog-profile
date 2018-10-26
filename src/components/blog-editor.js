@@ -6,13 +6,14 @@ import htmlToDraft from 'html-to-draftjs';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import 'draft-js/dist/Draft.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import axios from 'axios';
 export default class BlogEditor extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
     		editorState: EditorState.createEmpty(),
     		title:'',
-
+        editorContent:''
   		};
   		this.onEditorStateChange =this.onEditorStateChange.bind(this);
   		this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,19 +22,30 @@ export default class BlogEditor extends Component{
   
 onEditorStateChange(editorState){
 	this.setState({
-      editorState,
+      editorState:editorState,
+      editorContent:draftToHtml(convertToRaw(editorState.getCurrentContent()))
     });
 
 }
- handleChange(event) {
+handleChange(event) {
     this.setState({
-      [event.target.id]: event.target.value
+        [event.target.id]: event.target.value
     });
-  }
+}
 
-    handleSubmit(){
-    	return '';
-    };
+handleSubmit() {
+    console.log(this.state);
+    axios.post('https://api.adithyaneelavara.info/v1/PutPosts?PutPosts', {
+            "title": this.state.title,
+            "content": this.state.content
+        })
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
   render() {
     const { editorState } = this.state;
     return (
@@ -44,7 +56,7 @@ onEditorStateChange(editorState){
        <FormControl
               autoFocus
               type="text"
-              value={this.state.title}
+              id="title"
                onChange={this.handleChange}
             />
              <ControlLabel>Post</ControlLabel>
