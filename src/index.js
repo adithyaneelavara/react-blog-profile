@@ -16,7 +16,7 @@ import css from './css/resume.css'
 
 Amplify.configure({
   Auth: {
-    mandatorySignIn: true, 
+    mandatorySignIn: false, 
     region: config.cognito.REGION,
     userPoolId: config.cognito.USER_POOL_ID,
     userPoolWebClientId: config.cognito.APP_CLIENT_ID,

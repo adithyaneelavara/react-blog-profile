@@ -33,7 +33,16 @@ export default class Login extends Component {
   try {
     await Auth.signIn(this.state.email, this.state.password);
     this.props.childProps.userHasAuthenticated(true);
+   await Auth.currentSession().then(function(response) {
+            console.log(response);
+            this.props.childProps.setIdToken(response);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });;
+    
     this.props.history.push("/");
+
   } catch (e) {
     alert(e.message);
   }		

@@ -35,10 +35,13 @@ handleChange(event) {
 
 handleSubmit() {
     console.log(this.state);
-    axios.post('https://api.adithyaneelavara.info/v1/PutPosts?PutPosts', {
+    let headers={
+      "REACT_APP":this.props.childProps.idToken.jwtToken
+    };
+    axios.post('https://api.adithyaneelavara.info/v2/PutPosts', {
             "title": this.state.title,
-            "content": this.state.content
-        })
+            "text": this.state.editorContent
+        },{"headers":headers})
         .then(function(response) {
             console.log(response);
         })

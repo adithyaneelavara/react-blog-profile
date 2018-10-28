@@ -46,17 +46,21 @@ class App extends React.Component{
 
 
 		super(props);
+		let accessToken ='';
 		this.state={
 			isAuthenticated:false,
-			isAuthenticating: true
+			isAuthenticating: true,
+			idToken:'',
 		};
 		this.userHasAuthenticated =this.userHasAuthenticated.bind(this);
 		this.handleLogout =this.handleLogout.bind(this);
+		this.setIdToken=this.setIdToken.bind(this);
 	};
 	async componentDidMount() {
 	  try {
-	    await Auth.currentSession();
+	    let session = await Auth.currentSession();
 	    this.userHasAuthenticated(true);
+	    this.setIdToken(session);
 	  }
 	  catch(e) {
 	    if (e !== 'No current user') {
@@ -65,6 +69,19 @@ class App extends React.Component{
 	  }
 
 	  this.setState({ isAuthenticating: false });
+	}
+
+	async setIdToken(response){
+		if(response){
+			this.setState({idToken:response.idToken});
+		}else{
+			if(this.props.isAuthenticated){
+				let session = await Auth.currentSession();
+				if(session){
+					this.setState({idToken:session.idToken});
+				}
+			}
+		}
 	}
 	async handleLogout(){
 		await Auth.signOut();
@@ -76,8 +93,10 @@ class App extends React.Component{
 	render(){
 		const childProps={
 			isAuthenticated:this.state.isAuthenticated,
+			idToken:this.state.idToken,
 			userHasAuthenticated:this.userHasAuthenticated,
 			handleLogout:this.handleLogout,
+			setIdToken:this.setIdToken,
 		};
 		return (
 				<div >
