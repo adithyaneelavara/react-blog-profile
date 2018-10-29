@@ -11,6 +11,7 @@ import Skills from './components/skills';
 import Navigation from './components/navigation';
 import Login from './components/login';
 import BlogEditor from './components/blog-editor';
+import ReactGA from 'react-ga';
 
 const renderMergedProps = (component, ...rest) => {
   const finalProps = Object.assign({}, ...rest);
@@ -43,7 +44,8 @@ const PropsRoute = ({ component, ...rest }) => {
 
 class App extends React.Component{
 	constructor(props){
-
+	ReactGA.initialize('UA-128182609-1');
+ 	ReactGA.pageview(window.location.pathname + window.location.search);
 
 		super(props);
 		let accessToken ='';
