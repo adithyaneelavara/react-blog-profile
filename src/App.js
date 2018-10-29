@@ -12,6 +12,7 @@ import Navigation from './components/navigation';
 import Login from './components/login';
 import BlogEditor from './components/blog-editor';
 import ReactGA from 'react-ga';
+import { withAuthenticator } from 'aws-amplify-react';
 
 const renderMergedProps = (component, ...rest) => {
   const finalProps = Object.assign({}, ...rest);

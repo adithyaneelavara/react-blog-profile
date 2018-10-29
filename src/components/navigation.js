@@ -44,7 +44,7 @@ constructor(props){
 		             <Link className="nav-link" to="/blog">Blog</Link>
 		          </li>
 		          <li id="login111	topics" >
-		         {this.props.props.isAuthenticated ? <Link className="nav-link" to="/blogeditor">Publish</Link>:<div></div>}
+		       <Link className="nav-link" to="/blogeditor">Publish</Link>
 		         </li>
 		         <li id="login111	topics" >
 		         {this.props.props.isAuthenticated ? <a className="nav-link" to="logout" onClick={this.props.props.handleLogout}>Logout</a> : <Link className="nav-link" to="/login">Login</Link>}

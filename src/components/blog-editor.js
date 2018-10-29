@@ -7,7 +7,8 @@ import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import 'draft-js/dist/Draft.css';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import axios from 'axios';
-export default class BlogEditor extends Component{
+import { withAuthenticator } from 'aws-amplify-react';
+ class BlogEditor extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -84,3 +85,5 @@ handleSubmit() {
     );
   }
 }
+
+export default withAuthenticator(BlogEditor);
