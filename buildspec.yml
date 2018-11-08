@@ -11,6 +11,7 @@ artifacts:
   files:
     - index.html
     - blog.html
+    - sitemap.xml
     - favicon.ico
     - AdithyaNeelavara-Resume.pdf
     - images/*
