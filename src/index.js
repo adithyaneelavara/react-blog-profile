@@ -1,5 +1,6 @@
 import React from "react";
 import regeneratorRuntime from "regenerator-runtime";
+import 'babel-polyfill';
 import { HashRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom";
 import 'jquery'
