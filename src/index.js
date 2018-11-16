@@ -13,6 +13,17 @@ import App from './App'
 import bootstrapcss from './css/bootstrap.min.css'
 import css from './css/resume.css'	
 
+import WebFont from 'webfontloader';
+WebFont.load({
+  google: {
+    families: ['Saira Extra Condensed:500,700', 'Muli:400,400i,800,800i']
+  },
+    custom: {
+    families: ['My Font'],
+    urls: ['https://use.fontawesome.com/releases/v5.3.1/css/all.css']
+  }
+});
+
 
 
 Amplify.configure({
