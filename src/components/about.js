@@ -11,7 +11,11 @@ class AboutMe extends React.Component{
       <section className="resume-section p-3 p-lg-5 d-flex d-column" >
         <div className="my-auto">
          <span className="d-none d-lg-block">
-              <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/profile.png" alt="" />
+         <picture>
+           <source type="image/webp" srcSet="images/profile.webp" className="img-fluid img-profile rounded-circle mx-auto mb-2"  />
+           <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/profile.png" alt="" />
+          </picture>
+
             </span>
           <h2 className="mb-0">Adithya
             <span className="text-primary">Neelavara</span>
