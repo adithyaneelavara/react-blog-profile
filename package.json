@@ -48,7 +48,7 @@
     "react-ga": "^2.5.3",
     "react-mde": "^5.8.0",
     "react-router-dom": "^4.3.1",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.0",
     "webfontloader": "^1.6.28"
   }
 }
