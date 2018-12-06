@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "aws-amplify": "^1.1.6",
+    "aws-amplify": "^1.1.12",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.0.4",
     "babel-preset-env": "^1.7.0",
