@@ -43,7 +43,7 @@
     "npm": "^6.4.1",
     "react": "^16.8.6",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.8.6",
     "react-draft-wysiwyg": "^1.12.13",
     "react-ga": "^2.5.5",
     "react-mde": "^7.0.0",
