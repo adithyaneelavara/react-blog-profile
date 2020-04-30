@@ -30,7 +30,7 @@
     "popper.js": "^1.14.6"
   },
   "dependencies": {
-    "aws-amplify-react": "^2.1.1",
+    "aws-amplify-react": "^4.1.9",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.3",
